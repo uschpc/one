@@ -40,9 +40,8 @@ except OSError:
 cwd = os.getcwd()
 
 # Environment that will be applied to each scons child
-main_env = Environment()
+main_env = Environment(ENV = os.environ)
 main_env['ENV']['PATH'] = os.environ['PATH']
-
 main_env['CXXFLAGS'] = " -DGITVERSION=\'\"" + git_version + "\"\'"
 
 # snippet borrowed from http://dev.gentoo.org/~vapier/scons-blows.txt

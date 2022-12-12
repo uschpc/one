@@ -16,14 +16,14 @@
 
 import os
 
-env = Environment()
+env = Environment(ENV = os.environ)
 
 env['LIBS'] = ['-lz']
 env['CFLAGS'] = ['-std=c99', '-Wall']
 
 env.Program('genfont.c')
 
-env = Environment()
+env = Environment(ENV = os.environ)
 env['LIBS'] = ['-lvncserver', '-lnsl', '-lpthread', '-lz', '-ljpeg',
                '-lutil', '-lgnutls']
 
