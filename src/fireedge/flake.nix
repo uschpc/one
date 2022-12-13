@@ -18,28 +18,9 @@
       defaultPackage = self.packages."${package}:exe:${package}";
       devShell = pkgs.mkShell {
         buildInputs = with pkgs; [
-          stdenv
-          nodePackages.node-gyp-build
-          zlib.dev
           nodejs
-	        xmlrpc_c
-          scons
-          sqlite.dev
-          sqlite.out
-          postgresql
-          libmysqlclient
-          libxml2
-          libvncserver
-          openssl
-          openssl.dev
-          openssl.out
-          ruby
-          libjpeg.out
-          gnutls.out
-          libnsl.out
           zeromq
         ];
-        LDFLAGS = "-L${pkgs.zeromq}/lib";
         NODE_OPTIONS = "--openssl-legacy-provider";
       };
     });
